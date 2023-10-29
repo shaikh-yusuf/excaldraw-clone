@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhiteBoard</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://media.licdn.com/dms/image/D4E0BAQEn__KA-n6S3g/company-logo_200_200/0/1694506023774?e=2147483647&amp;v=beta&amp;t=BI5l1YCK0Ggk51Q_Q75Wr408IIqIdMuXhH4Tbd-QrM8"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <div id="top">
+        <button class="material-icons menu btn" onclick="toggleMenu()">
+          menu
+        </button>
+        <div class="options" id="actionbuttons">
+          <button
+            class="btn material-icons"
+            id="freehand"
+            onclick="onActionClick(this)"
+          >
+            edit
+          </button>
+          <button
+            id="circle"
+            class="btn material-symbols-outlined"
+            onclick="onActionClick(this)"
+          >
+            brightness_1
+          </button>
+          <button
+            id="rectangle"
+            class="btn material-symbols-outlined"
+            onclick="onActionClick(this)"
+          >
+            check_box_outline_blank
+          </button>
+          <button
+            onclick="onActionClick(this)"
+            class="btn material-symbols-outlined"
+            id="line"
+          >
+            pen_size_2
+          </button>
+          <button
+            id="eraser"
+            class="btn material-symbols-outlined"
+            onclick="onActionClick(this)"
+          >
+            ink_eraser
+          </button>
+
+          <button
+            id="clear"
+            class="btn material-symbols-outlined"
+            onclick="onActionClick(this)"
+          >
+            clear
+          </button>
+        </div>
+        <div></div>
+      </div>
+      <canvas id="canvas"></canvas>
+      <div id="bottom">
+        <div class="options">
+          <button class="btn material-icons" id="undo">undo</button>
+          <button class="btn material-icons" id="redo">redo</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form hide">
+      <label for="strokewidth">Stroke Width</label>
+      <input
+        type="range"
+        id="strokewidth"
+        name="strokewidth"
+        min="3"
+        max="20"
+        oninput="onInput(this)"
+      />
+      <label for="bright">Brigthnes</label>
+      <input
+        type="range"
+        id="bright"
+        min="0"
+        max="10"
+        oninput="onInput(this)"
+      />
+      <label for="strokestyle">Pick Color</label>
+      <input
+        type="color"
+        name="strokestyle"
+        id="strokestyle"
+        oninput="onInput(this)"
+      />
+
+      <button class="btn " id="saveImg">save</button>
+    </div>
+
+    <script src="state.js"></script>
+    <script src="drawing.js"></script>
+    <!-- <script src="undoredo.js"></script> -->
+  </body>
+</html>
